@@ -1,1 +1,1375 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ashwani Patel | AI / ML Enthusiast</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#05070d;
+    --card:#0b1019;
+    --cyan:#00f6ff;
+    --purple:#8b5cf6;
+    --pink:#ff2bd6;
+    --text:#f4f7ff;
+    --muted:#8993a7;
+    --border:rgba(0,246,255,.15);
+}
+
+body{
+    background:
+        radial-gradient(circle at 10% 10%,rgba(0,246,255,.08),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(139,92,246,.09),transparent 30%),
+        var(--bg);
+    color:var(--text);
+    font-family:Consolas,Monaco,"Courier New",monospace;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* GRID BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(0,246,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,246,255,.025) 1px,transparent 1px);
+    background-size:45px 45px;
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#05070d;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(var(--cyan),var(--purple));
+    border-radius:20px;
+}
+
+/* NAV */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    padding:0 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgba(5,7,13,.75);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--border);
+    z-index:1000;
+}
+
+.logo{
+    color:var(--cyan);
+    font-size:18px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:var(--purple);
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:#9ba5b7;
+    text-decoration:none;
+    font-size:13px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--cyan);
+}
+
+/* GENERAL */
+
+section{
+    width:86%;
+    max-width:1200px;
+    margin:auto;
+    padding:110px 0;
+}
+
+.section-tag{
+    color:var(--cyan);
+    font-size:12px;
+    letter-spacing:3px;
+    margin-bottom:10px;
+}
+
+.section-title{
+    font-size:clamp(32px,5vw,55px);
+    margin-bottom:15px;
+}
+
+.section-description{
+    color:var(--muted);
+    max-width:650px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding-top:140px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:70px;
+}
+
+.terminal-line{
+    color:var(--muted);
+    margin-bottom:18px;
+    font-size:14px;
+}
+
+.terminal-line span{
+    color:#65ff91;
+}
+
+.hero h1{
+    font-size:clamp(50px,8vw,100px);
+    line-height:.95;
+    letter-spacing:-5px;
+}
+
+.gradient{
+    background:linear-gradient(
+        90deg,
+        var(--cyan),
+        #7c7cff,
+        var(--pink)
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero-role{
+    margin-top:25px;
+    color:#cbd2df;
+    font-size:20px;
+}
+
+.cursor{
+    display:inline-block;
+    width:9px;
+    height:22px;
+    background:var(--cyan);
+    margin-left:5px;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+.hero-description{
+    color:var(--muted);
+    max-width:680px;
+    margin-top:22px;
+    font-size:15px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:12px 20px;
+    border:1px solid var(--border);
+    color:#dce4f5;
+    border-radius:8px;
+    background:rgba(255,255,255,.025);
+    transition:.3s;
+}
+
+.btn:hover{
+    border-color:var(--cyan);
+    color:var(--cyan);
+    box-shadow:0 0 25px rgba(0,246,255,.15);
+    transform:translateY(-3px);
+}
+
+/* PROFILE */
+
+.profile-area{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.photo-frame{
+    width:330px;
+    height:400px;
+    position:relative;
+    padding:10px;
+}
+
+.photo-frame::before,
+.photo-frame::after{
+    content:"";
+    position:absolute;
+    width:70px;
+    height:70px;
+    border-color:var(--cyan);
+    border-style:solid;
+}
+
+.photo-frame::before{
+    top:0;
+    left:0;
+    border-width:2px 0 0 2px;
+}
+
+.photo-frame::after{
+    right:0;
+    bottom:0;
+    border-width:0 2px 2px 0;
+}
+
+.photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:10px;
+    border:1px solid rgba(0,246,255,.35);
+    filter:saturate(1.1);
+    box-shadow:
+        0 0 40px rgba(0,246,255,.12),
+        0 0 100px rgba(139,92,246,.1);
+}
+
+.photo-label{
+    position:absolute;
+    bottom:-20px;
+    left:25px;
+    padding:8px 15px;
+    background:#080c14;
+    border:1px solid var(--cyan);
+    color:var(--cyan);
+    font-size:11px;
+}
+
+/* CODE BOX */
+
+.code-box{
+    margin-top:45px;
+    background:#070a11;
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 20px 70px rgba(0,0,0,.35);
+}
+
+.code-header{
+    height:38px;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:0 15px;
+    border-bottom:1px solid var(--border);
+    color:#647084;
+    font-size:11px;
+}
+
+.dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#384151;
+}
+
+.code-content{
+    padding:25px;
+    color:#b5c0d4;
+    font-size:13px;
+    overflow:auto;
+}
+
+.keyword{color:#c084fc}
+.variable{color:#67e8f9}
+.string{color:#86efac}
+.comment{color:#556176}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-top:45px;
+}
+
+.info-card{
+    padding:30px;
+    background:rgba(255,255,255,.025);
+    border:1px solid var(--border);
+    border-radius:14px;
+    transition:.3s;
+}
+
+.info-card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(0,246,255,.5);
+}
+
+.info-card h3{
+    color:var(--cyan);
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+.info-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* SKILLS */
+
+.skills{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:15px;
+}
+
+.skill{
+    padding:20px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.02);
+    border-radius:10px;
+    transition:.3s;
+}
+
+.skill:hover{
+    color:var(--cyan);
+    border-color:var(--cyan);
+    transform:translateY(-4px);
+}
+
+.skill-icon{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+/* PROJECTS */
+
+.projects{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.project{
+    padding:30px;
+    border:1px solid var(--border);
+    background:
+        linear-gradient(145deg,rgba(0,246,255,.035),rgba(139,92,246,.025));
+    border-radius:14px;
+    position:relative;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-6px);
+    border-color:var(--purple);
+}
+
+.project-number{
+    color:#465064;
+    font-size:12px;
+}
+
+.project h3{
+    margin:10px 0;
+    font-size:20px;
+}
+
+.project p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.tag{
+    font-size:10px;
+    color:var(--cyan);
+    border:1px solid rgba(0,246,255,.2);
+    padding:5px 8px;
+    border-radius:4px;
+}
+
+/* EDUCATION */
+
+.education{
+    margin-top:45px;
+    padding:35px;
+    border-left:2px solid var(--cyan);
+    background:linear-gradient(
+        90deg,
+        rgba(0,246,255,.05),
+        transparent
+    );
+}
+
+.current{
+    color:#65ff91;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.education h3{
+    margin:10px 0;
+    font-size:24px;
+}
+
+.education p{
+    color:var(--muted);
+}
+
+/* CERTIFICATES */
+
+.certificates{
+    margin-top:45px;
+    display:grid;
+    gap:15px;
+}
+
+.certificate{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:22px 25px;
+    background:rgba(255,255,255,.02);
+    border:1px solid var(--border);
+    border-radius:12px;
+    transition:.3s;
+}
+
+.certificate:hover{
+    transform:translateX(7px);
+    border-color:var(--cyan);
+}
+
+.cert-icon{
+    width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    border:1px solid var(--cyan);
+    color:var(--cyan);
+    border-radius:8px;
+    flex-shrink:0;
+}
+
+.cert-info{
+    flex:1;
+}
+
+.cert-info h3{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.cert-info p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.view-cert{
+    color:var(--cyan);
+    text-decoration:none;
+    font-size:11px;
+    white-space:nowrap;
+}
+
+.view-cert:hover{
+    text-decoration:underline;
+}
+
+/* CONTACT */
+
+.contact-box{
+    margin-top:45px;
+    padding:45px;
+    text-align:center;
+    border:1px solid var(--border);
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,246,255,.06),
+            transparent 65%
+        );
+    border-radius:15px;
+}
+
+.contact-box p{
+    color:var(--muted);
+    margin:15px auto;
+    max-width:600px;
+}
+
+.contact-links{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.contact-link{
+    color:#cbd5e1;
+    text-decoration:none;
+    padding:10px 15px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    font-size:12px;
+}
+
+.contact-link:hover{
+    color:var(--cyan);
+    border-color:var(--cyan);
+}
+
+/* FOOTER */
+
+footer{
+    padding:35px 7%;
+    border-top:1px solid var(--border);
+    text-align:center;
+    color:#515c70;
+    font-size:12px;
+}
+
+footer span{
+    color:var(--cyan);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+    nav ul{
+        display:none;
+    }
+
+    section{
+        width:90%;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding-top:120px;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .profile-area{
+        order:-1;
+    }
+
+    .photo-frame{
+        width:270px;
+        height:330px;
+    }
+
+    .about-grid,
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .certificate{
+        align-items:flex-start;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+
+    .section-title{
+        font-size:35px;
+    }
+
+    .certificate{
+        flex-wrap:wrap;
+    }
+
+    .view-cert{
+        margin-left:65px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        ASHWANI<span>.DEV</span>
+    </div>
+
+    <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#education">EDUCATION</a></li>
+        <li><a href="#certificates">CERTIFICATES</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <div class="terminal-line">
+            portfolio.init()
+            <span>✓ online</span>
+        </div>
+
+        <h1>
+            Ashwani<br>
+            <span class="gradient">Patel.</span>
+        </h1>
+
+        <div class="hero-role">
+            AI / ML Enthusiast<span class="cursor"></span>
+        </div>
+
+        <p class="hero-description">
+            BSc Computer Science student building skills across
+            Desktop Support, Data Analysis, Data Science and AI/ML.
+            Exploring technology, solving problems and creating
+            things with code.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn">
+                ./view_projects
+            </a>
+
+            <a
+                href="https://github.com/ashwani762050-design"
+                target="_blank"
+                class="btn">
+                GitHub ↗
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/ashwani-patel-2059613a2"
+                target="_blank"
+                class="btn">
+                LinkedIn ↗
+            </a>
+
+        </div>
+
+
+        <!-- TERMINAL -->
+
+        <div class="code-box">
+
+            <div class="code-header">
+
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+
+                <span style="margin-left:8px;">
+                    ashwin@portfolio — profile.json
+                </span>
+
+            </div>
+
+            <div class="code-content">
+
+<pre>
+<span class="keyword">const</span> <span class="variable">developer</span> = {
+
+  name: <span class="string">"Ashwani Patel"</span>,
+
+  role: <span class="string">"CS Student"</span>,
+
+  focus: <span class="string">"AI / ML"</span>,
+
+  status: <span class="string">"Learning..."</span>
+
+};
+
+<span class="comment">// building skills for the future</span>
+</pre>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHOTO -->
+
+    <div class="profile-area">
+
+        <div class="photo-frame">
+
+            <img
+                src="myimage.jpeg"
+                alt="Ashwani Patel"
+                class="photo">
+
+            <div class="photo-label">
+                user.profile // Ashwani
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-tag">
+        // 01 — ABOUT
+    </div>
+
+    <h2 class="section-title">
+        Who am I?
+    </h2>
+
+    <p class="section-description">
+        A student. A learner. A builder.
+    </p>
+
+
+    <div class="about-grid">
+
+        <div class="info-card">
+
+            <h3>
+                01. developer_profile()
+            </h3>
+
+            <p>
+                I am Ashwani Patel, a BSc Computer Science student
+                interested in technology, programming and problem
+                solving. My current learning path includes Desktop
+                Support, Data Analysis, Data Science and Artificial
+                Intelligence.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                02. current_mission()
+            </h3>
+
+            <p>
+                Learn continuously, build practical projects,
+                understand how systems work and develop strong
+                technical foundations for the future.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-tag">
+        // 02 — SKILLS
+    </div>
+
+    <h2 class="section-title">
+        Tech Stack
+    </h2>
+
+    <p class="section-description">
+        Tools and technologies I am learning and working with.
+    </p>
+
+
+    <div class="skills">
+
+        <div class="skill">
+            <div class="skill-icon">🐍</div>
+            Python
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🐼</div>
+            Pandas
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">📊</div>
+            Data Analysis
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">📈</div>
+            Data Science
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🤖</div>
+            AI / ML
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">💻</div>
+            Desktop Support
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🪟</div>
+            Windows
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🌐</div>
+            Networking
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🔧</div>
+            Git
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🐙</div>
+            GitHub
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">⚡</div>
+            C++ / DSA
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🧠</div>
+            Problem Solving
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="section-tag">
+        // 03 — PROJECTS
+    </div>
+
+    <h2 class="section-title">
+        Things I've Built
+    </h2>
+
+    <p class="section-description">
+        Turning learning into practical work.
+    </p>
+
+
+    <div class="projects">
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT_001
+            </div>
+
+            <h3>
+                Personal Portfolio
+            </h3>
+
+            <p>
+                A futuristic developer portfolio designed with
+                HTML and CSS and deployed using GitHub Pages.
+            </p>
+
+            <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">GitHub Pages</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT_002
+            </div>
+
+            <h3>
+                Data Analysis
+            </h3>
+
+            <p>
+                Learning to clean, filter, transform and analyze
+                datasets using Python and Pandas.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Data</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT_003
+            </div>
+
+            <h3>
+                AI / ML Lab
+            </h3>
+
+            <p>
+                Exploring machine learning concepts and developing
+                a foundation for future AI/ML projects.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">AI</span>
+                <span class="tag">ML</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT_004
+            </div>
+
+            <h3>
+                Desktop Support Lab
+            </h3>
+
+            <p>
+                Practicing computer hardware, Windows troubleshooting,
+                BIOS, networking and desktop support concepts.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Windows</span>
+                <span class="tag">Hardware</span>
+                <span class="tag">Networking</span>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="section-tag">
+        // 04 — EDUCATION
+    </div>
+
+    <h2 class="section-title">
+        Learning Journey
+    </h2>
+
+
+    <div class="education">
+
+        <div class="current">
+            CURRENT
+        </div>
+
+        <h3>
+            BSc Computer Science — Second Year
+        </h3>
+
+        <p>
+            Shri Mahadev Baburav Chaughule College, Bhiwandi.
+            Current focus includes programming, data, AI/ML,
+            networking and IT support.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- CERTIFICATES -->
+
+<section id="certificates">
+
+    <div class="section-tag">
+        // 05 — CERTIFICATES
+    </div>
+
+    <h2 class="section-title">
+        Certifications
+    </h2>
+
+    <p class="section-description">
+        Learning milestones and completed courses.
+        Certificate previews are intentionally hidden.
+    </p>
+
+
+    <div class="certificates">
+
+
+        <!-- CERTIFICATE 1 -->
+
+        <div class="certificate">
+
+            <div class="cert-icon">
+                ◈
+            </div>
+
+            <div class="cert-info">
+
+                <h3>
+                    AI for Beginners
+                </h3>
+
+                <p>
+                    HP LIFE • Certificate of Completion
+                    • Presented: August 26, 2026
+                </p>
+
+            </div>
+
+            <a
+                href="certificate-ai-for-beginners.pdf"
+                target="_blank"
+                class="view-cert">
+
+                [ VIEW_CERTIFICATE ]
+
+            </a>
+
+        </div>
+
+
+        <!-- CERTIFICATE 2 -->
+
+        <div class="certificate">
+
+            <div class="cert-icon">
+                ◉
+            </div>
+
+            <div class="cert-info">
+
+                <h3>
+                    Strategic Planning in the AI Age
+                </h3>
+
+                <p>
+                    HP LIFE • Certificate of Completion
+                    • Presented: August 26, 2026
+                </p>
+
+            </div>
+
+            <a
+                href="certificate-strategic-planning-ai.pdf"
+                target="_blank"
+                class="view-cert">
+
+                [ VIEW_CERTIFICATE ]
+
+            </a>
+
+        </div>
+
+
+        <!-- CERTIFICATE 3 -->
+
+        <div class="certificate">
+
+            <div class="cert-icon">
+                ⌘
+            </div>
+
+            <div class="cert-info">
+
+                <h3>
+                    Basics of Python
+                </h3>
+
+                <p>
+                    Certificate of Completion
+                    • Awarded: February 2, 2026
+                </p>
+
+            </div>
+
+            <a
+                href="certificate-basics-python.pdf"
+                target="_blank"
+                class="view-cert">
+
+                [ VIEW_CERTIFICATE ]
+
+            </a>
+
+        </div>
+
+
+        <!-- CERTIFICATE 4 -->
+
+        <div class="certificate">
+
+            <div class="cert-icon">
+                ▣
+            </div>
+
+            <div class="cert-info">
+
+                <h3>
+                    Practice Exam — CompTIA Tech+
+                </h3>
+
+                <p>
+                    LinkedIn Learning • Practice Exam 1 — FC0-U71
+                    • Completed: August 23, 2026
+                </p>
+
+            </div>
+
+            <a
+                href="certificate-comptia-tech-plus.pdf"
+                target="_blank"
+                class="view-cert">
+
+                [ VIEW_CERTIFICATE ]
+
+            </a>
+
+        </div>
+
+
+        <!-- CERTIFICATE 5 -->
+
+        <div class="certificate">
+
+            <div class="cert-icon">
+                ◇
+            </div>
+
+            <div class="cert-info">
+
+                <h3>
+                    Agile Analysis Certification
+                </h3>
+
+                <p>
+                    LinkedIn Learning • Practice Exam — IIBA®-AAC
+                    • Completed: August 23, 2026
+                </p>
+
+            </div>
+
+            <a
+                href="certificate-agile-analysis.pdf"
+                target="_blank"
+                class="view-cert">
+
+                [ VIEW_CERTIFICATE ]
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="section-tag">
+        // 06 — CONTACT
+    </div>
+
+    <h2 class="section-title">
+        Let's Connect
+    </h2>
+
+    <p class="section-description">
+        Have an idea, opportunity or technical discussion?
+    </p>
+
+
+    <div class="contact-box">
+
+        <h2>
+            terminal.message()
+        </h2>
+
+        <p>
+            Building my skills one project at a time.
+        </p>
+
+
+        <div class="contact-links">
+
+            <a
+                href="tel:+919730722579"
+                class="contact-link">
+                PHONE • +91 97307 22579
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/ashwani-patel-2059613a2"
+                target="_blank"
+                class="contact-link">
+                LINKEDIN ↗
+            </a>
+
+
+            <a
+                href="https://github.com/ashwani762050-design"
+                target="_blank"
+                class="contact-link">
+                GITHUB ↗
+            </a>
+
+        </div>
+
+
+        <div style="
+            margin-top:35px;
+            color:#536074;
+            font-size:12px;
+        ">
+            $ keep_learning --mode=future
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Ashwani Patel
+    <br>
+    <span>AI / ML • DATA • DESKTOP SUPPORT</span>
+
+</footer>
+
+
+</body>
+</html>
+```
 
